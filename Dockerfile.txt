@@ -1,9 +1,0 @@
-FROM node:20-slim
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN --mount=type=cache,id=s/935c188a-e5fc-4b44-97b7-35aef15ae335-/root/npm,target=/root/.npm npm install
-COPY . .
-ENV NODE_ENV=production
-ENV PORT=8000
-EXPOSE 8000
-CMD ["npm","start"]
