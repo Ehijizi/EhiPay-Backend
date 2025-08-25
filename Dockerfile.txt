@@ -1,7 +1,7 @@
 FROM node:20-slim
 WORKDIR /app
 COPY package.json package-lock.json* ./
-RUN --mount=type=cache,id=s/d4d8803d-ff57-46be-8331-90fe412a1ec5-/root/npm,target=/root/.npm npm install
+RUN --mount=type=cache,id=s/935c188a-e5fc-4b44-97b7-35aef15ae335-/root/npm,target=/root/.npm npm install
 COPY . .
 ENV NODE_ENV=production
 ENV PORT=8000
