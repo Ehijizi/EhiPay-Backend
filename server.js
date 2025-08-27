@@ -25,6 +25,11 @@ app.get("/api", (req, res) => {
   });
 });
 
+// Catch-all for unknown routes (returns 404)
+app.use((req, res) => {
+  res.status(404).json({ status: "error", message: "Route not found" });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server started, listening on port ${PORT}`);
